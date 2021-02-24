@@ -1,0 +1,185 @@
+footer {
+    @include box-sizing(border-box);
+    text-align: left;
+    font-size: 0.813em;
+    padding: 75px 0;
+    // background-color: rgb(250,212,13); // Old browsers
+    // @include filter-gradient(#fad40d, #fbc80a, vertical); // IE6-9
+    // @include background-image(linear-gradient(top, rgba(250,212,13,1) 0%,rgba(251,200,10,1) 100%));
+    position: relative;
+    height: 400px;
+    .container{
+        @include border-radius(6em);
+        @include clearfix;
+        width: 920px;
+        background: #1d2604;
+        padding: 2em 3em;
+        position: absolute;
+        z-index: 1;
+        margin: 0 auto;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 250px; //
+    }
+    a {
+        display: inline-block;
+        text-decoration: none;
+        color: $primaryColor;
+        padding: 5px 5px 0;
+        &:hover,
+        &:focus {
+            color: darken($primaryColor, 10);
+        }
+    }
+    .footer_info {
+        @include make-xs-column(12);
+        @include make-sm-column(12);
+        @include make-md-column(9);
+        @include make-lg-column(9);
+        @include gutter();
+        .desk{ display: block; }
+        .mobile{ display: none; }
+    }
+    .footer_icon {
+        @include make-xs-column(12);
+        @include make-sm-column(12);
+        @include make-md-column(3);
+        @include make-lg-column(3);
+        @include gutter();
+        text-align: right;
+        a {
+            display: inline-block;
+            vertical-align: top;
+        }
+        // img { max-width: 120px; }
+    }
+    @media screen and (max-width: 1000px) {
+        .container{
+            width: 100%;
+            height: auto;
+            background: rgba(0,0,0,.75);
+            padding: 2em 1em;
+            @include border-radius(0);
+            @include box-sizing;
+        }
+        .footer_info{
+            img {
+                max-width: 100%;
+                max-height: 100%;
+            }
+            .desk{ display: none;}
+            .mobile{ display: block; }
+        }
+        .footer_icon {
+            text-align: left;
+            margin-top: 1em;
+        }
+    }
+    .update,
+    .counter {
+        display: inline-block;
+        margin-right: 5px;
+        em {
+            font-style: normal;
+            color: $primaryColor;
+            padding: 0 .5em;
+        }
+    }
+}
+
+#Mp{
+    background: url("../images/basic/MP-bg-top.png") left top repeat-x;
+    footer {
+        @include box-sizing(border-box);
+        text-align: left;
+        font-size: 0.813em;
+        padding: 75px 0;
+        background-color: rgb(250,212,13); // Old browsers
+        @include filter-gradient(#fad40d, #fbc80a, vertical); // IE6-9
+        @include background-image(linear-gradient(top, rgba(250,212,13,1) 0%,rgba(251,200,10,1) 100%));
+        position: relative;
+        height: 400px;
+        .container{
+            @include border-radius(6em);
+            @include clearfix;
+            width: 920px;
+            background: #1d2604;
+            padding: 2em 3em;
+            position: absolute;
+            z-index: 1;
+            margin: auto;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 250px; //
+        }
+        a {
+            display: inline-block;
+            text-decoration: none;
+            color: $primaryColor;
+            padding: 5px 5px 0;
+            &:hover,
+            &:focus {
+                color: darken($primaryColor, 10);
+            }
+        }
+        .footer_info {
+            @include make-xs-column(12);
+            @include make-sm-column(12);
+            @include make-md-column(9);
+            @include make-lg-column(9);
+            @include gutter();
+            .desk{ display: block; }
+            .mobile{ display: none; }
+        }
+        .footer_icon {
+            @include make-xs-column(12);
+            @include make-sm-column(12);
+            @include make-md-column(3);
+            @include make-lg-column(3);
+            @include gutter();
+            text-align: right;
+            a {
+                display: inline-block;
+                vertical-align: top;
+            }
+            // img { max-width: 120px; }
+        }
+        @media screen and (max-width: 1000px) {
+            .container{
+                width: 100%;
+                height: auto;
+                background: rgba(0,0,0,.75);
+                padding: 2em 1em;
+                @include border-radius(0);
+                @include box-sizing;
+            }
+            .footer_info{
+                img {
+                    // max-width: 100%;
+                    // max-height: 100%;
+                    max-height: 260px;
+                }
+                .desk{ display: none;}
+                .mobile{ display: block; }
+            }
+            .footer_icon {
+                text-align: left;
+                margin-top: 1em;
+            }
+        }
+        .update,
+        .counter {
+            display: inline-block;
+            margin-right: 5px;
+            em {
+                font-style: normal;
+                color: $primaryColor;
+                padding: 0 .5em;
+            }
+        }
+    }
+}

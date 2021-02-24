@@ -1,0 +1,162 @@
+body {
+    &.noscroll {
+        position: static !important;
+        width: 100%;
+        height: 100%;
+        overflow: hidden !important;
+        overflow-y: hidden !important;
+        margin: 0;
+        padding: 0;
+    }
+}
+
+// 最外圍預設為100% 
+
+.wrapper{
+    width: 100%;
+    margin: 0px auto;
+    background: url("../images/basic/bg-top.png") left top repeat-x;
+    position: relative;
+    overflow: hidden;
+    // @media screen and (max-width: 1199px) {
+    //     width: 100%;
+    // }
+    
+    .tree-left-01,
+    .tree-right-01,
+    .tree-left-bottom-01,
+    .tree-right-bottom,
+    .owls,
+    .owl-left,
+    .owl-center,
+    .owl-right{ position: absolute; }
+
+    // 頁首左邊樹枝
+    .tree-left-01{
+        left: -100px;
+        top: -30px;
+        transform: rotate(15deg);
+        img{
+            opacity: .4;
+            width: 510px;
+            height: 280px;
+        }
+    }
+    // 頁首右邊樹枝
+    .tree-right-01{
+        right: -680px;
+        top: -20px;
+        transform: rotate(-10deg);
+        img{
+            opacity: .4;
+            height: 260px;
+        }
+    }
+
+    // 頁尾左邊樹枝
+    .tree-left-bottom-01{
+        bottom: 30px;
+        right: 30%;
+    }
+    // 頁尾右邊樹枝
+    .tree-right-bottom{
+        bottom: 0px;
+        left: 50%;
+        img{ vertical-align: bottom; }
+    }
+    @include screen('tablet') {
+        .tree-left-01,
+        .tree-right-01{
+            display: none;
+        }
+    }
+
+    // 頁尾貓頭鷹
+    .owls{
+        left: 0;
+        bottom: 0;
+        z-index: 100;
+        width: 400px;
+        height: 120px;
+        background: rgba(0,0,0,.25); 
+        left: 18%;
+        bottom: 7%;
+        transform: rotate(-5deg);
+    }
+    @media screen and (max-width: 1920px) {
+        .owl-left{
+            right: 78%;
+            bottom: 340px;
+            transform: rotate(-5deg);
+        }
+        .owl-center{
+            right: 70.8%;
+            bottom: 350px;
+            transform: rotate(-5deg);
+        }
+        .owl-right{
+            right: 61%;
+            bottom: 350px;
+        }
+    }
+    @media screen and (max-width: 1500px) {
+        .owl-left{
+            right: 87%;
+            bottom: 320px;
+            transform: rotate(-5deg);
+        }
+        .owl-center{
+            right: 78%;
+            bottom: 333px;
+            transform: rotate(-5deg);
+        }
+        .owl-right{
+            right: 68%;
+            bottom: 340px;
+        }
+    }
+    @include screen('tablet') {
+        .owl-left,
+        .owl-center,
+        .owl-right{ display: none; }
+    }
+}
+
+// 整體共用container樣式，請注意首頁切版頁面的整齊
+.container {
+    padding: 0;
+    margin: 0 auto;
+    max-width: $container-max; //請看_variable.scss
+}
+
+.main {
+    position: relative;
+    margin: 0 auto;
+    padding: 0; // max-width: $container-max;
+    // 可先設定一個中央區塊最大寬，限制accesskey對齊
+    @include screen('mobile') {
+        padding-top: 60px;
+    } // 內頁標題設定
+    h2 {
+        line-height: 1.25em;
+    }
+}
+
+////////////////////////////////////////////////////////////
+// 為了與首頁區隔，請在內頁加上innerpage ClassName
+.innerpage {
+    padding-top: 2em;
+    margin-bottom: 2.6em;
+    font-size: 1.25em;
+    @include screen('mobile') {
+        padding-top: 5em;
+    }
+    >.container {
+        @include gutter(60px); //gutter 代表左右要留白
+        z-index: 200;
+        background: rgba(255, 255, 255, .9);
+        border-radius: 3px;
+        padding-top: 2em;
+        padding-bottom: 2em;   
+    }
+}

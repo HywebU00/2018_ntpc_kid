@@ -1,0 +1,36 @@
+.category {
+    text-align: left;
+    @include box-sizing;
+    margin: 2em auto;
+    ul {
+        padding: 0;
+        margin: 0;
+        overflow:hidden;
+        li {
+            margin: 0px 3px 3px 0px;
+            display: block;
+            float: left;
+        }
+    }
+    a {
+        // background: $primaryColor;
+        padding: .4em 1em;
+        display:block;
+        color: darken($primaryColor, 30);
+        border: solid 1px darken($primaryColor, 30);
+        @include box-sizing();
+        @include border-radius(4px);
+        text-decoration: none !important;
+        &:hover,
+        &:focus {
+            // background: darken($primaryColor, 20);
+            background: darken($primaryColor, 30);
+            color: #fff;
+        }
+    }
+    a.Now{
+        background: darken($primaryColor, 30);
+        border: solid 1px transparent;
+        color: #fff;
+    }
+}
